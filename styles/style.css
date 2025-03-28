@@ -86,6 +86,7 @@ ol {
   height: 386px;
   margin-bottom: 16px;
   position: relative;
+  padding: 3px 3px 2px 3px;
 }
 
 .result__video {
@@ -201,9 +202,8 @@ input[type='checkbox']:checked + .search-form__pseudo-checkbox::after {
 .content__list-container {
   height: 298px;
   overflow-y: auto;
-  overflow-x: hidden;
   position: relative;
-  padding-left: 3px;
+  width: 100%;
 }
 
 .content__list {
@@ -212,8 +212,9 @@ input[type='checkbox']:checked + .search-form__pseudo-checkbox::after {
   gap: 30px;
 }
 
-.content__list-item:last-of-type {
-  margin-bottom: 30px;
+
+.content__list-item {
+  padding: 0 3px;
 }
 
 .content__card-link {
@@ -224,7 +225,6 @@ input[type='checkbox']:checked + .search-form__pseudo-checkbox::after {
 .content__video-card {
   display: flex;
   align-items: flex-start;
-  justify-content: space-between;
 }
 
 .content__video-card-description-container {
@@ -232,6 +232,12 @@ input[type='checkbox']:checked + .search-form__pseudo-checkbox::after {
   display: flex;
   flex-direction: column;
   gap: 5px;
+  display: -webkit-box;
+ -webkit-box-orient: vertical;
+ -webkit-line-clamp: 4;
+ line-clamp: 4;
+ overflow: hidden; 
+ line-height: 16.2px;
 }
 
 .content__video-card-title {
@@ -247,11 +253,11 @@ input[type='checkbox']:checked + .search-form__pseudo-checkbox::after {
 }
 
 .content__video-card-description {
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, sans-serif;
   font-weight: 400;
   font-size: 18px;
-  line-height: 16.2px;
   color: rgba(255, 255, 255, 1);
+  line-height: 20px;
 }
 
 .content__video-card-thumbnail {
@@ -302,10 +308,11 @@ input[type='checkbox']:checked + .search-form__pseudo-checkbox::after {
   outline: 1px solid rgba(255, 255, 255, 1);
   outline-offset: 0px;
 }
-.search-form__label:hover {
+
+.search-form__label:hover .search-form__label-text { 
   text-decoration: underline;
   cursor: pointer;
-}
+} 
 
 .search-form__textfield:focus {
   outline: none;
@@ -314,4 +321,8 @@ input[type='checkbox']:checked + .search-form__pseudo-checkbox::after {
 .search-form__label:has(.search-form__checkbox:focus-visible) {
   outline: 1px solid rgba(255, 255, 255, 1);
   outline-offset: 1px;
+}   
+
+.content__card-link_current {
+  background-color: #545050;
 }
